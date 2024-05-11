@@ -3,15 +3,15 @@
 
  Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 50741
+ Source Server Version : 80035 (8.0.35)
  Source Host           : localhost:3306
  Source Schema         : furn_ssm
 
  Target Server Type    : MySQL
- Target Server Version : 50741
+ Target Server Version : 80035 (8.0.35)
  File Encoding         : 65001
 
- Date: 07/12/2023 08:37:03
+ Date: 11/05/2024 09:55:11
 */
 
 SET NAMES utf8mb4;
@@ -22,15 +22,15 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `furn`;
 CREATE TABLE `furn`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `maker` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `maker` varchar(64) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `price` decimal(11, 2) NOT NULL,
-  `sales` int(11) NOT NULL,
-  `stock` int(11) NOT NULL,
-  `img_path` varchar(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `sales` int NOT NULL,
+  `stock` int NOT NULL,
+  `img_path` varchar(256) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 93 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 93 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of furn
