@@ -1,0 +1,9 @@
+## 基于ssm的家居项目
+### 技术栈
+* Spring
+* SpringMVC
+* Mybatis、逆向工程、分页插件
+* Druid
+* Mysql
+* JSR303数据校验
+* JSP

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!--mybatis逆向工程配置文件-->
+
+<generatorConfiguration>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--解读：生成没有注释的bean-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--解读：配置数据库连接信息-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/furn_ssm?characterEncoding=UTF-8"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <!--解读：取消强制大小数-->
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!--解读：指定JavaBean生成的位置-->
+        <javaModelGenerator targetPackage="com.zk.furn.bean" targetProject=".\src\main\java">
+            <!--解读：启用子包-->
+            <property name="enableSubPackages" value="true" />
+            <!--解读：修剪字符串，去除前后空格-->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--解读：指定sql映射文件生成的位置-->
+        <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resources">
+            <!--解读：启用子包-->
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--解读：指定dao接口生成的位置，也就是xxxMapper.java接口-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zk.furn.dao"  targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--解读：指定要逆向生成的表和生成策略-->
+        <table tableName="furn" domainObjectName="Furn"></table>
+
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>zk_furn_ssm</artifactId>
+
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>zk_furn_ssm Maven Webapp</name>
+
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!--  引入springmvc (已经自动把spring核心的库/jar引入了)-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.3.8</version>
+    </dependency>
+
+    <!--引入spring-jdbc,支持事务相关-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>5.3.8</version>
+    </dependency>
+
+    <!--引入spring aspects 切面编程需要的库/jar-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>5.3.8</version>
+    </dependency>
+
+    <!--引入mybatis库/jar-->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.5.7</version>
+    </dependency>
+
+    <!--引入德鲁伊连接池-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.2.6</version>
+    </dependency>
+
+    <!--引入mysql驱动-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.49</version>
+    </dependency>
+
+    <!--引入原生servlet依赖 的jar-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <!--老韩解读
+      1. scope标签表示引入的jar的作用范围
+      2. provided:表示该项目在打包,放到生产环境的时候，不需要带上servlet-api.jar
+      3. 因为tomcat本身是有servlet的jar, 到时直接使用tomcat本身的servlet-api.jar,防止版本冲突
+      4. 后面老师在讲解maven时，还有详细讲解
+      -->
+      <scope>provided</scope>
+    </dependency>
+
+    <!--mybatis整合到spring的适配包/库-->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>2.0.6</version>
+    </dependency>
+
+    <!--引入mybatis的逆向工程库/依赖包-->
+    <dependency>
+      <groupId>org.mybatis.generator</groupId>
+      <artifactId>mybatis-generator-core</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+
+    <!--引入jackson，处理json-->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.12.4</version>
+    </dependency>
+
+    <!--引入mybatis pageHelper分页插件-->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>5.2.1</version>
+    </dependency>
+
+    <!--JSR303数据校验支持引入-->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.1.0.Final</version>
+    </dependency>
+
+  </dependencies>
+
+</project>

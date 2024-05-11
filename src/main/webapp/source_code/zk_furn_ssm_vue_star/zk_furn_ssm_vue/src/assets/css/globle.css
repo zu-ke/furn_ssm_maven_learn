@@ -1,0 +1,6 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*解读：将border和padding的数值包含在width和height之内，可以避免修改这两个属性时导致盒子变大*/
+    box-sizing: border-box;
+}
